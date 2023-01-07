@@ -1,0 +1,23 @@
+{% extends 'inventory/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-8 offset-2">
+        <h4 class="alert alert-info">Update Inventory_Details</h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="Update">
+            {% for msg in messages %}
+            <div class="alert alert-success" role="alert">
+                <p> {{ msg }} </P>
+                
+                
+              </div>
+
+            {% endfor %}
+            <a href="{% url 'addandshow' %}" class="btn btn-info">Back to Home</a>
+        </form>
+    </div>
+</div>            
+
+{% endblock content %}
